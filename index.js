@@ -31,9 +31,9 @@ app.use(cookieParser());
 
 app.use('/url' ,restrictToLoggedinUserOnly, urlRoute);
 
-app.post('/urlmanual' ,restrictToLoggedinUserOnly, handleGenerateNewShortURLmanual);
+app.post('/urlmanual',restrictToLoggedinUserOnly , handleGenerateNewShortURLmanual);
 app.use("/user", userRoute);
-app.use('/' , staticRoute);
+app.use('/',checkAuth , staticRoute);
 app.get('/:shortId' , async (req, res) =>{
     const shortId = req.params.shortId;
 
