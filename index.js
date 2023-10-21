@@ -33,7 +33,7 @@ app.use('/url' ,restrictToLoggedinUserOnly, urlRoute);
 
 app.post('/urlmanual' ,restrictToLoggedinUserOnly, handleGenerateNewShortURLmanual);
 app.use("/user", userRoute);
-app.use('/',checkAuth , staticRoute);
+app.use('/' , staticRoute);
 app.get('/:shortId' , async (req, res) =>{
     const shortId = req.params.shortId;
 
