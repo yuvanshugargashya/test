@@ -10,7 +10,7 @@ router.get('/' , async (req,res) => {
   });
 });
 
-router.get('/urlmanual' , async (req,res) => {
+router.post('/urlmanual' , async (req,res) => {
   if (!req.user) return res.redirect("/login");
   const allurls = await URL.find({ createdBy: req.user._id });
   return res.render("home", {
